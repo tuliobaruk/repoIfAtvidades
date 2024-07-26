@@ -1,0 +1,55 @@
+.inicio-container {
+    background-image: url("../../assets/wallpaper.png");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.logo {
+    max-width: 500px;
+}
+
+.texto-principal {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.descricao {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.botao-navegacao {
+    font-size: 1.3rem;
+    border: 1px solid #99948a;
+    border-radius: 0px;
+    color: #333;
+    width: 500px;
+    height: 50px;
+    text-align: center;
+    background-color: #f1ebe5;
+    transition: background 0.3s, color 0.3s;
+}
+
+.botao-navegacao:hover {
+    background: #333;
+    color: #fff;
+}
+
+.menuCol{
+    margin-left: 100px;
+    background-color: #f1ebe5;
+    padding: 50px;
+}
+
+.redes-sociais .social-link {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 10px 20px;
+}
+
+.classeLinks{
+    text-decoration: none;
+    color: #514e41;
+}

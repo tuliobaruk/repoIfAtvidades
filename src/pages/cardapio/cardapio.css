@@ -1,0 +1,42 @@
+.cardapio-container {
+    background-color: #cdcfc0;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    padding: 20px 0;
+}
+
+.logob {
+    max-width: 200px;
+}
+
+.logoCol {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.textCol {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.cardapio-text {
+    color: #423f32;
+    font-size: 50px;
+    margin-left: 20px;
+    white-space: nowrap;
+}
+
+.cardapio-text-abaixo {
+    font-size: 20px;
+    text-align: center;
+    color: #3c3a2f; 
+    margin-top: 40px; 
+    letter-spacing: 0.25em; /* Espaçamento entre letras */
+    line-height: 1.2; /* Altura da linha para melhor legibilidade */
+    max-width: 800px; /* Largura máxima para controlar a quebra de linha */
+    margin-left: auto;
+    margin-right: auto;
+}
