@@ -1,26 +1,60 @@
-// src/App.js
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Inicio from './pages/inicio/inicio';
-import Cardapio from './pages/cardapio/cardapio';
-import Espaco from './pages/espaco/espaco';
-import PratosEstacao from './pages/pratosestacao/pratosestacao';
-import FAQ from './pages/faq/faq';
-import SobreNos from './pages/sobrenos/sobrenos';
+import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Login from "./pages/Login";
+import Contacts from "./pages/Contacts";
+import AddContact from "./pages/AddContact";
+import Register from "./pages/Register";
+import EditContact from "./pages/EditContact";
 
-function App() {
+const App = () => {
+  const [userId, setUserId] = useState(null);
+  const [userName, setUserName] = useState("");
+  const [contacts, setContacts] = useState([]);
+
+  const handleLogin = (id, name) => {
+    setUserId(id);
+    setUserName(name);
+  };
+
+  const handleContactAdded = (newContact) => {
+    setContacts((prevContacts) => [...prevContacts, newContact]);
+  };
+
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Inicio />} />
-        <Route path="/cardapio" element={<Cardapio />} />
-        <Route path="/espaco" element={<Espaco />} />
-        <Route path="/pratosestacao" element={<PratosEstacao />} />
-        <Route path="/FAQ" element={<FAQ />} />
-        <Route path="/sobrenos" element={<SobreNos />} />
+        <Route
+          path="/contacts"
+          element={
+            <Contacts
+              userId={userId}
+              userName={userName}
+              contacts={contacts}
+              setContacts={setContacts}
+            />
+          }
+        />
+        <Route
+          path="/add-contact"
+          element={
+            <AddContact userId={userId} onContactAdded={handleContactAdded} />
+          }
+        />
+        <Route
+          path="/edit-contact/:contactId"
+          element={
+            <EditContact
+              userId={userId}
+              contacts={contacts}
+              setContacts={setContacts}
+            />
+          }
+        />
+        <Route path="/register" element={<Register />} />
+        <Route path="/" element={<Login onLogin={handleLogin} />} />
       </Routes>
     </Router>
   );
-}
+};
 
 export default App;

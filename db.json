@@ -1,0 +1,92 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": "tbms@teste.com",
+      "password": "123456"
+    },
+    {
+      "id": "2",
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "password": "password456"
+    },
+    {
+      "id": "ad50",
+      "name": "NovoUser",
+      "email": "novo@123",
+      "password": "123"
+    },
+    {
+      "id": "27b9",
+      "name": "usuarionooo",
+      "email": "usuarionoo@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "3286",
+      "name": "novoUsuario",
+      "email": "novouser@teste.com",
+      "password": "123456"
+    }
+  ],
+  "contacts": [
+    {
+      "id": "3",
+      "userId": "2",
+      "name": "Charlie Davis",
+      "email": "charlie.davis@example.com",
+      "phone": "555-555-5555",
+      "createdDate": "2023-01-01T00:00:00Z"
+    },
+    {
+      "userId": "1",
+      "name": "Testando",
+      "email": "testando@gmail.com",
+      "phone": "40028922",
+      "createdDate": "2023-01-01T00:00:00Z",
+      "id": "9441"
+    },
+    {
+      "userId": "1",
+      "name": "ttt",
+      "email": "ttt@gmail.com",
+      "phone": "999999",
+      "createdDate": "2023-01-01T00:00:00Z",
+      "id": "22f9"
+    },
+    {
+      "id": "e412",
+      "userId": "1",
+      "name": "yyy",
+      "email": "yyy@gmail.com",
+      "phone": "3333333",
+      "createdDate": "2023-01-01T00:00:00Z"
+    },
+    {
+      "id": "7def",
+      "userId": "1",
+      "name": "tttttteeee",
+      "email": "rwe@g",
+      "phone": "6546",
+      "createdDate": "2024-08-04T18:43:03.911Z"
+    },
+    {
+      "userId": "3286",
+      "name": "Tulio Baruk",
+      "email": "tbms@discente.ifpe.edu.br",
+      "phone": "81 99999 9999",
+      "createdDate": "2024-08-04T22:50:53.521Z",
+      "id": "c0f9"
+    },
+    {
+      "userId": "3286",
+      "name": "NovoContato",
+      "email": "contato@123.com",
+      "phone": "123",
+      "createdDate": "2024-08-04T22:51:58.975Z",
+      "id": "358b"
+    }
+  ]
+}
