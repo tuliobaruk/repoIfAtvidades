@@ -1,25 +1,19 @@
-// src/App.js
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Inicio from './pages/inicio/inicio';
-import Cardapio from './pages/cardapio/cardapio';
-import Espaco from './pages/espaco/espaco';
-import PratosEstacao from './pages/pratosestacao/pratosestacao';
-import FAQ from './pages/faq/faq';
-import SobreNos from './pages/sobrenos/sobrenos';
-
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+import { Cadastro } from "./pages/cadastroPage/Cadastro";
+import { Home } from "./pages/homePage/Home";
+import { Login } from "./pages/loginPage/Login";
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Inicio />} />
-        <Route path="/cardapio" element={<Cardapio />} />
-        <Route path="/espaco" element={<Espaco />} />
-        <Route path="/pratosestacao" element={<PratosEstacao />} />
-        <Route path="/FAQ" element={<FAQ />} />
-        <Route path="/sobrenos" element={<SobreNos />} />
-      </Routes>
-    </Router>
+    <div className="App">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/cadastro" element={<Cadastro />} />
+          <Route path="/home" element={<Home />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 
