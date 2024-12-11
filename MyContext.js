@@ -61,8 +61,28 @@ const MyProvider = ({ children }) => {
     return cart.reduce((total, item) => total + item.price * item.quantity, 0);
   };
 
+  const addQuantity = (productId) => {
+    const updatedCart = cart.map((item) =>
+      item.id === productId ? { ...item, quantity: item.quantity + 1 } : item
+    );
+    setCart(updatedCart);
+  };
+
+  const minusQuantity = (productId) => {
+    const updatedCart = cart
+      .map((item) =>
+        item.id === productId
+          ? { ...item, quantity: item.quantity - 1 }
+          : item
+      )
+      .filter((item) => item.quantity > 0);
+    setCart(updatedCart);
+  };
+  
+  
+
   return (
-    <MyContext.Provider value={{ cart, addToCart, delToCart, removeFromCart, clearCart, getTotalValue }}>
+    <MyContext.Provider value={{ cart, addToCart, delToCart, removeFromCart, clearCart, getTotalValue, addQuantity, minusQuantity }}>
       {children}
     </MyContext.Provider>
   );

@@ -3,17 +3,36 @@ import { View, Text, FlatList, Image, TouchableOpacity, StyleSheet, Button } fro
 import { useMyContext } from './MyContext';
 
 const CartScreen = () => {
-    const { cart, removeFromCart, clearCart, getTotalValue, addToCart } = useMyContext();
+    const { cart, removeFromCart, clearCart, getTotalValue, addQuantity, minusQuantity } = useMyContext();
     console.log(cart);
 
     const renderCartItem = ({ item }) => (
         <View style={styles.cartItem}>
             <View style={styles.itemDetails}>
-                <Text style={styles.itemText}>{item.name} - ${item.price}</Text>
+                <Text style={styles.itemText}>{item.name} - R${item.price}</Text>
+                <Text style={styles.quantityText}>Qtd: {item.quantity}</Text>
+                <Text style={styles.quantityText}>Preço Total R$:{item.quantity * item.price}</Text>
             </View>
             <View style={styles.actionContainer}>
                 
-                <Text style={styles.quantityText}>Quantidade: {item.quantity}</Text>
+                <TouchableOpacity
+                    onPress={() => addQuantity(item.id)}
+                    style={styles.addButton}
+                >
+                    <Image
+                        source={{ uri: 'https://cdn-icons-png.flaticon.com/512/4315/4315609.png' }}
+                        style={styles.addIcon}
+                    />
+                </TouchableOpacity>
+                <TouchableOpacity
+                    onPress={() => minusQuantity(item.id)}
+                    style={styles.minusButton}
+                >
+                    <Image
+                        source={{ uri: 'https://cdn-icons-png.flaticon.com/512/4436/4436695.png' }}
+                        style={styles.removeIcon}
+                    />
+                </TouchableOpacity>
                 <TouchableOpacity
                     onPress={() => removeFromCart(item.id)}
                     style={styles.removeButton}
@@ -100,13 +119,30 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
     },
-    removeButton: {
+    minusButton: {
         padding: 5,
         backgroundColor: '#f8d7da',
+        borderRadius: 50,
+        marginLeft: 10,
+    },
+    removeButton: {
+        padding: 5,
+        borderRadius: 50,
+        marginLeft: 25,
+        marginTop: -50,
+        marginRight: -10
+    },
+    addButton: {
+        padding: 5,
+        backgroundColor: '#d7f8da',
         borderRadius: 50,
         marginLeft: 10
     },
     removeIcon: {
+        width: 20,
+        height: 20,
+    },
+    addIcon: {
         width: 20,
         height: 20,
     },
